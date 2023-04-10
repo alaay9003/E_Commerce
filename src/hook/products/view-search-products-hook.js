@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { getAllProductSearch } from "./../../redux/actions/productsAction";
 
 const ViewSearchProductsHook = () => {
-  let limit = 2;
+  let limit = 10;
   const dispatch = useDispatch();
 
   const getProduct = async () => {
