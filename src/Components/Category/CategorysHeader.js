@@ -1,23 +1,28 @@
 import React, { useState } from "react";
 import { Col } from "react-bootstrap";
 import { Container, Row } from "react-bootstrap";
+import HomeCategoryHook from "../../hook/category/home-category-hook";
+import CategoryCard from "./CategoryCard";
 
 const CategorysHeader = () => {
+  const [cat, loading, color] = HomeCategoryHook();
+
   return (
     <div className="cat-header">
       <Container>
         <Row>
           <Col className="d-flex justify-content-start py-2 flex-wrap">
-            <div className="cat-text-header ">الكل</div>
-            <div className="cat-text-header">الكترونيات</div>
-            <div className="cat-text-header">ملابس</div>
-            <div className="cat-text-header"> كهربيه</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">المزيد</div>
+            {cat.length > 0 ? (
+              cat.data.slice(0, 10).map((item, key) => {
+                return (
+                  <div className="cat-text-header " key={key}>
+                    {item.name}
+                  </div>
+                );
+              })
+            ) : (
+              <div className="cat-text-header ">جاري التحميل ..</div>
+            )}
           </Col>
         </Row>
       </Container>

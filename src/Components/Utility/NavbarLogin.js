@@ -7,23 +7,31 @@ import { FormControl, Nav, NavDropdown } from "react-bootstrap";
 import login from "../../images/login.png";
 import cart from "../../images/cart.png";
 import NavbarSearchHook from "../../hook/search/navbar-search-hook";
+import GetAllUserCartHook from "../../hook/cart/get-all-user-cart-hook";
 
 const NavbarLogin = () => {
   let word = "";
   if (localStorage.getItem("searchWord") != null)
     word = localStorage.getItem("searchWord");
   const [searchWord, onChangeSearch] = NavbarSearchHook();
-
   const [user, setUser] = useState("");
   useEffect(() => {
     if (localStorage.getItem("user") != null)
       setUser(JSON.parse(localStorage.getItem("user")));
   }, []);
-
   const logOut = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
     setUser("");
   };
+
+  const [
+    itemsNum,
+    cartItems,
+    totalCartPrice,
+    couponNameRes,
+    totalCartPriceAfterDiscount,
+  ] = GetAllUserCartHook();
 
   return (
     <Navbar className="sticky-top" bg="dark" variant="dark" expand="sm">
@@ -69,15 +77,17 @@ const NavbarLogin = () => {
                 <p style={{ color: "white" }}>دخول</p>
               </Nav.Link>
             )}
-
             <Nav.Link
               href="/cart"
-              className="nav-text d-flex mt-3 justify-content-center"
+              className="nav-text d-flex mt-3 justify-content-center position-relative"
               style={{ color: "white" }}
             >
               <img src={cart} className="login-img" alt="sfvs" />
               <p style={{ color: "white" }}>العربه</p>
-            </Nav.Link>
+              <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                {itemsNum || 0}
+              </span>
+            </Nav.Link>{" "}
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -170,7 +170,7 @@ body {
 .discount-backcolor {
   height: 130px;
   border-radius: 8px;
-  background: radial-gradient(circle, #767676 0%, #4d4f50 100%, #494c4d 100%);
+  /* background: radial-gradient(circle, #4d4b53 0%, #44414e 100%, #3f404e 100%); */
 }
 
 .discount-title {

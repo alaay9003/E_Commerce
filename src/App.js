@@ -1,4 +1,5 @@
 import HomePage from "./Pages/Home/HomePage";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavbarLogin from "./Components/Utility/NavbarLogin";
 import Footer from "./Components/Utility/Footer";
@@ -27,6 +28,8 @@ import AdminEditProductsPage from "./Pages/Admin/AdminEditProductsPage";
 import VerifyPasswordPage from "./Pages/Auth/VerifyPasswordPage";
 import ForgetPasswordPage from "./Pages/Auth/ForgetPasswordPage";
 import RsetPasswordPage from "./Pages/Auth/ResetPasswordPage";
+import AdminDeletCategoryPage from "./Pages/Admin/AdminDeletCategoryPage";
+import AdminDeletBrandPage from "./Pages/Admin/AdminDeletBrandPage";
 
 function App() {
   return (
@@ -53,6 +56,11 @@ function App() {
             element={<AdminAddSubCategoryPage />}
           />
           <Route path="/admin/addproduct" element={<AdminAddProductsPage />} />
+          <Route path="/admin/deletbrand" element={<AdminDeletBrandPage />} />
+          <Route
+            path="/admin/deletcategory"
+            element={<AdminDeletCategoryPage />}
+          />
           <Route path="/user/allorders" element={<UserAllOrdersPage />} />
           <Route
             path="/user/favoriteproducts"

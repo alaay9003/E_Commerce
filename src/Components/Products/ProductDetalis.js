@@ -1,21 +1,27 @@
-import React from 'react'
-import { Row, Col } from 'react-bootstrap'
-import ProductGallery from './ProductGallery'
-import ProductText from './ProductText'
+import React from "react";
+import { Row, Col } from "react-bootstrap";
+import ProductGallery from "./ProductGallery";
+import ProductText from "./ProductText";
 
-const ProductDetalis = () => {
-    return (
-        <div>
-            <Row className='py-3'>
-                <Col lg="4">
-                    <ProductGallery />
-                </Col>
-                <Col lg="8">
-                     <ProductText />
-                </Col>
-            </Row>
-        </div>
-    )
-}
+const ProductDetalis = ({ item, images, cat, oneBrand, prod }) => {
+  return (
+    <div>
+      <Row className="py-3">
+        <Col lg="4">
+          <ProductGallery images={images} />
+        </Col>
+        <Col lg="8">
+          <ProductText
+            item={item}
+            images={images}
+            cat={cat}
+            oneBrand={oneBrand}
+            prod={prod}
+          />
+        </Col>
+      </Row>
+    </div>
+  );
+};
 
-export default ProductDetalis
+export default ProductDetalis;
