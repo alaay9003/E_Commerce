@@ -12,6 +12,7 @@ const inital = {
   oneCategory: [],
   deletCategory: [],
 };
+
 const categoryReducer = (state = inital, action) => {
   switch (action.type) {
     case GET_ALL_CATEGORY:
@@ -32,12 +33,12 @@ const categoryReducer = (state = inital, action) => {
       };
     case GET_ONE_CATEGORY:
       return {
-        loading: true,
+        loading: false,
         oneCategory: action.payload,
       };
     case DELET_CATEGORY:
       return {
-        loading: true,
+        loading: false,
         deletCategory: action.payload,
       };
     default:

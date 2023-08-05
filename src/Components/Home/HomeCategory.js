@@ -6,6 +6,7 @@ import HomeCategoryHook from "../../hook/category/home-category-hook";
 
 const HomeCategory = () => {
   const [category, loading, color] = HomeCategoryHook();
+
   return (
     <Container>
       <SubTitle title=" التصنيفات" btntitle="المزيد" pathText="/allcategory" />
@@ -19,6 +20,7 @@ const HomeCategory = () => {
                 img={item.image}
                 background={color[index]}
                 name={item.name}
+                id={item._id}
               />
             );
           })

@@ -9,9 +9,12 @@ function HomeCategoryHook() {
 
   const category = useSelector((state) => state.allCategory.category);
   const loading = useSelector((state) => state.allCategory.loading);
+
   let cat = [];
-  if (category) {
+  if (category && !loading) {
     cat = category;
+    // console.log("ssssssssssss" + cat);
+    // console.log(loading);
   } else {
     cat = [];
   }
@@ -23,7 +26,7 @@ function HomeCategoryHook() {
     "#FF6262",
     "#F4DBA5",
   ];
-  console.log(loading);
+  console.log("ssssssssssss" + cat);
   return [cat, loading, color];
 }
 

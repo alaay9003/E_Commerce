@@ -4,15 +4,13 @@ import { Container, Row } from "react-bootstrap";
 import HomeCategoryHook from "../../hook/category/home-category-hook";
 import CategoryCard from "./CategoryCard";
 
-const CategorysHeader = () => {
-  const [cat, loading, color] = HomeCategoryHook();
-
+const CategorysHeader = ({ cat }) => {
   return (
     <div className="cat-header">
       <Container>
         <Row>
           <Col className="d-flex justify-content-start py-2 flex-wrap">
-            {cat.length > 0 ? (
+            {cat ? (
               cat.data.slice(0, 10).map((item, key) => {
                 return (
                   <div className="cat-text-header " key={key}>

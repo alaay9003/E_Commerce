@@ -32,7 +32,7 @@ const NavbarLogin = () => {
     couponNameRes,
     totalCartPriceAfterDiscount,
   ] = GetAllUserCartHook();
-
+  // console.log(itemsNum);
   return (
     <Navbar className="sticky-top" bg="dark" variant="dark" expand="sm">
       <Container>
@@ -77,17 +77,21 @@ const NavbarLogin = () => {
                 <p style={{ color: "white" }}>دخول</p>
               </Nav.Link>
             )}
-            <Nav.Link
-              href="/cart"
-              className="nav-text d-flex mt-3 justify-content-center position-relative"
-              style={{ color: "white" }}
-            >
-              <img src={cart} className="login-img" alt="sfvs" />
-              <p style={{ color: "white" }}>العربه</p>
-              <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
-                {itemsNum || 0}
-              </span>
-            </Nav.Link>{" "}
+            {user == "" ? null : (
+              <div>
+                <Nav.Link
+                  href="/cart"
+                  className="nav-text d-flex mt-3 justify-content-center position-relative"
+                  style={{ color: "white" }}
+                >
+                  <img src={cart} className="login-img" alt="sfvs" />
+                  <p style={{ color: "white" }}>العربه</p>
+                  <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                    {itemsNum || 0}
+                  </span>
+                </Nav.Link>{" "}
+              </div>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

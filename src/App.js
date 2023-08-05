@@ -30,6 +30,7 @@ import ForgetPasswordPage from "./Pages/Auth/ForgetPasswordPage";
 import RsetPasswordPage from "./Pages/Auth/ResetPasswordPage";
 import AdminDeletCategoryPage from "./Pages/Admin/AdminDeletCategoryPage";
 import AdminDeletBrandPage from "./Pages/Admin/AdminDeletBrandPage";
+import OneCategoryPage from "./Pages/Category/OneCategoryPage";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
           <Route path="/admin/addbrand" element={<AdminAddBrandPage />} />
           <Route path="/admin/addcategory" element={<AdminAddCategoryPage />} />
+          <Route path="/onecategory/:id" element={<OneCategoryPage />} />
           <Route
             path="/admin/addsubcategory"
             element={<AdminAddSubCategoryPage />}

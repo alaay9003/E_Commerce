@@ -22,7 +22,12 @@ const CategoryContainer = ({ data, loading }) => {
           ) : data ? (
             data.map((item, index) => {
               return (
-                <CategoryCard key={index} img={item.image} name={item.name} />
+                <CategoryCard
+                  key={index}
+                  img={item.image}
+                  name={item.name}
+                  id={item._id}
+                />
               );
             })
           ) : (

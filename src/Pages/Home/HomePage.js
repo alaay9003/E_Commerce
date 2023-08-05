@@ -9,7 +9,8 @@ import laptops from "../../images/laptops.png";
 import cloth from "../../images/clothe.png";
 import { Container } from "react-bootstrap";
 const HomePage = () => {
-  const [items] = ViewHomeProductsHook();
+  const [items, loading] = ViewHomeProductsHook();
+  //console.log(items);
   return (
     <div className="font" style={{ minHeight: "670px" }}>
       <Slider />

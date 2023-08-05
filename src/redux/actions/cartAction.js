@@ -14,7 +14,6 @@ import { useUpdateData } from "../../hooks/useUpdateData";
 export const addProductToCart = (body) => async (dispatch) => {
   try {
     const res = await useInsertData(`/api/v1/cart`, body);
-    //console.log(res);
 
     dispatch({
       type: ADD_TO_CART,
@@ -31,7 +30,6 @@ export const addProductToCart = (body) => async (dispatch) => {
 export const getProductCart = () => async (dispatch) => {
   try {
     const res = await useGetDataToken(`/api/v1/cart`);
-    console.log(res);
 
     dispatch({
       type: GET_FROM_CART,

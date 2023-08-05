@@ -17,10 +17,12 @@ const DeleteCartHook = (item) => {
     setLoading(true);
     await dispatch(clearAllCartItem());
     setLoading(false);
+    handleClose(true);
   };
   const onChangeCount = (e) => {
     setItemCount(e.target.value);
   };
+
   useEffect(() => {
     if (item) setItemCount(item.count);
   }, []);

@@ -12,10 +12,11 @@ import useDeleteData from "../../hooks/useDeleteData";
 export const getAllCategory = (limit) => async (dispatch) => {
   try {
     const res = await useGetData(`/api/v1/categories?limit=${limit}`);
-    //console.log(res);
+    //console.log("resssssss" + res);
     dispatch({
       type: GET_ALL_CATEGORY,
       payload: res,
+      loading: true,
     });
   } catch (e) {
     dispatch({
@@ -27,10 +28,11 @@ export const getAllCategory = (limit) => async (dispatch) => {
 
 export const getAllCategoryPage = (page) => async (dispatch) => {
   try {
-    const res = await useGetData(`/api/v1/categories?limit=6&page=${page}`);
+    const res = await useGetData(`/api/v1/categories?limit=10&page=${page}`);
     dispatch({
       type: GET_ALL_CATEGORY,
       payload: res,
+      loading: true,
     });
   } catch (e) {
     dispatch({

@@ -10,12 +10,14 @@ const ViewHomeProductsHook = () => {
   }, []);
 
   const allProducts = useSelector((state) => state.allproducts.allProducts);
+  const loading = useSelector((state) => state.allproducts.loading);
   let items = [];
-  if (allProducts.data) {
+  if (!loading && allProducts) {
     items = allProducts.data.slice(0, 4);
   } else {
     items = [];
   }
+
   return [items];
 };
 
