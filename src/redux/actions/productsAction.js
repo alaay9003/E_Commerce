@@ -6,6 +6,7 @@ import {
   GET_Product_Like,
   DELETE_Product,
   UPDATE_PRODUCT,
+  GET_Product_BRAND,
 } from "./../type";
 import useGetData from "../../hooks/useGetData";
 import { useInsertDataWithImage } from "../../hooks/useInsertData";
@@ -80,7 +81,22 @@ export const getProductLike = (id) => async (dispatch) => {
     });
   }
 };
+export const getProductByBrand = (id) => async (dispatch) => {
+  try {
+    const response = await useGetData(`/api/v1/products?brand=${id}`);
 
+    dispatch({
+      type: GET_Product_BRAND,
+      payload: response,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error from catch " + e,
+    });
+  }
+};
 export const deletProducts = (id) => async (dispatch) => {
   try {
     const response = await useDeleteData(`/api/v1/products/${id}`);

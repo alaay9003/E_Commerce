@@ -1,4 +1,9 @@
-import { CREATE_ProductS, GET_ERROR, GET_Product_DETAILS } from "../type";
+import {
+  CREATE_ProductS,
+  GET_ERROR,
+  GET_Product_BRAND,
+  GET_Product_DETAILS,
+} from "../type";
 import {
   GET_ALL_ProductS,
   GET_Product_Like,
@@ -14,6 +19,7 @@ const inital = {
   updateProducts: [],
   oneProductLike: [],
   deleteProduct: [],
+  oneBrandProduct: null,
 };
 const productsReducer = (state = inital, action) => {
   switch (action.type) {
@@ -37,6 +43,12 @@ const productsReducer = (state = inital, action) => {
     case GET_Product_DETAILS:
       return {
         oneProduct: action.payload,
+        loading: false,
+      };
+    case GET_Product_BRAND:
+      return {
+        ...state,
+        oneBrandProduct: action.payload,
         loading: false,
       };
     case GET_Product_Like:

@@ -9,18 +9,17 @@ import { useParams } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 import laptops from "../../images/laptops.png";
 import DiscountSection from "../../Components/Home/DiscountSection";
-import HomeCategoryHook from "../../hook/category/home-category-hook";
+
 const ProductDetalisPage = () => {
   const { id } = useParams();
   const [item, images, cat, oneBrand, prod] = ViewProductDetailsHook(id);
-  // const [category, loading, color] = HomeCategoryHook();
-  // console.log(category);
+
   if (prod) var prods = prod.slice(0, 4);
   return (
     <div style={{ minHeight: "670px" }}>
-      {/* <CategorysHeader category={category} /> */}
+      {/* <CategorysHeader /> */}
       <Container>
-        {images.length && cat ? (
+        {images.length && cat && oneBrand ? (
           <ProductDetalis
             item={item}
             images={images}

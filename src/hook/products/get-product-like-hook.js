@@ -14,7 +14,7 @@ const GetProductLikeHook = (PrdID) => {
   const res = useSelector((state) => state.allproducts.oneProductLike);
   const loading = useSelector((state) => state.allproducts?.loading);
   let products = [];
-  if (!loading && res.data) {
+  if (!loading && res) {
     products = res.data;
   } else {
     products = [];

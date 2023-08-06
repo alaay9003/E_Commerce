@@ -20,7 +20,11 @@ const ProductCard = ({ title, item }) => {
       >
         <Link to={`/products/${item._id}`} style={{ textDecoration: "none" }}>
           <Card.Img
-            style={{ height: "228px", width: "100%" }}
+            // className=" mx-auto"
+            style={{
+              height: "228px",
+              width: "100%",
+            }}
             src={item.imageCover}
           />
         </Link>

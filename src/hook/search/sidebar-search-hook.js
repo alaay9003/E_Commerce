@@ -18,15 +18,17 @@ const SidebarSearchHook = () => {
 
   const allCategory = useSelector((state) => state.allCategory.category);
   const allBrand = useSelector((state) => state.allBrand.brand);
-  let category = [],
-    brand = [];
-  if (allCategory.data) {
-    category = allCategory.data;
-  }
+  // let category = [],
+  //   brand = [];
+  // if (allCategory) {
+  //   category = allCategory.data;
+  // }
 
-  if (allBrand.data) {
-    brand = allBrand.data;
-  }
+  // if (allBrand) {
+  //   brand = allBrand.data;
+  // } else {
+  //   brand = [];
+  // }
   var queryCat = "";
   const [catCheked, setCatCheked] = useState([]);
   const clickCategory = (e) => {
@@ -96,7 +98,7 @@ const SidebarSearchHook = () => {
     }, 1000);
   }, [from, to]);
 
-  return [category, brand, clickCategory, clickBrand, priceFrom, priceTo];
+  return [allCategory, allBrand, clickCategory, clickBrand, priceFrom, priceTo];
 };
 
 export default SidebarSearchHook;

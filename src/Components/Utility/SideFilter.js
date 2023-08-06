@@ -5,6 +5,7 @@ import SidebarSearchHook from "./../../hook/search/sidebar-search-hook";
 const SideFilter = () => {
   const [category, brand, clickCategory, clickBrand, priceFrom, priceTo] =
     SidebarSearchHook();
+
   var pricefrom = localStorage.getItem("priceFrom");
   var priceto = localStorage.getItem("priceTo");
   return (
@@ -17,21 +18,23 @@ const SideFilter = () => {
             <div className="filter-sub me-2 ">الكل</div>
           </div>
           {category ? (
-            category.map((item, index) => {
-              return (
-                <div key={index} className="d-flex mt-3">
-                  <input
-                    onChange={clickCategory}
-                    type="checkbox"
-                    value={item._id}
-                  />
-                  <div className="filter-sub me-2 ">{item.name}</div>
-                </div>
-              );
-            })
-          ) : (
-            <h6>لا يوجد تصنيفات </h6>
-          )}
+            category.results ? (
+              category.data.map((item, index) => {
+                return (
+                  <div key={index} className="d-flex mt-3">
+                    <input
+                      onChange={clickCategory}
+                      type="checkbox"
+                      value={item._id}
+                    />
+                    <div className="filter-sub me-2 ">{item.name}</div>
+                  </div>
+                );
+              })
+            ) : (
+              <h6>لا يوجد تصنيفات </h6>
+            )
+          ) : null}
         </div>
 
         <div className="d-flex flex-column mt-2">
@@ -41,18 +44,20 @@ const SideFilter = () => {
             <div className="filter-sub me-2 ">الكل</div>
           </div>
           {brand ? (
-            brand.map((item, index) => {
-              return (
-                <div key={index} className="d-flex mt-3">
-                  <input
-                    onChange={clickBrand}
-                    type="checkbox"
-                    value={item._id}
-                  />
-                  <div className="filter-sub me-2 ">{item.name}</div>
-                </div>
-              );
-            })
+            brand.results ? (
+              brand.data.map((item, index) => {
+                return (
+                  <div key={index} className="d-flex mt-3">
+                    <input
+                      onChange={clickBrand}
+                      type="checkbox"
+                      value={item._id}
+                    />
+                    <div className="filter-sub me-2 ">{item.name}</div>
+                  </div>
+                );
+              })
+            ) : null
           ) : (
             <h6> لايوجد مركات</h6>
           )}

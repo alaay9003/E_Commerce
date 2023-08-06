@@ -12,11 +12,11 @@ const ProductGallery = ({ images }) => {
 
   return (
     <div
-      className="product-gallary-card d-flex justfiy-content-center  align-items-center
-        pt-2"
+      className="product-gallary-card d-flex justfiy-content-center  align-items-center pt-3
+        "
       style={{ width: "100%", height: "100%" }}
     >
-      <div className="container-fluid slider">
+      <div className="container-fluid slider  ">
         {images.length ? (
           <ImageGallery
             items={images}

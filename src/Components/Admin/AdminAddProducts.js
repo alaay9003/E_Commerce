@@ -94,14 +94,16 @@ const AdminAddProducts = () => {
             className="select input-form-area mt-3 px-2 "
           >
             <option value="0">التصنيف الرئيسي</option>
-            {category.data
-              ? category.data.map((item, index) => {
-                  return (
-                    <option key={index} value={item._id}>
-                      {item.name}
-                    </option>
-                  );
-                })
+            {category
+              ? category.results
+                ? category.data.map((item, index) => {
+                    return (
+                      <option key={index} value={item._id}>
+                        {item.name}
+                      </option>
+                    );
+                  })
+                : null
               : null}
           </select>
 
@@ -120,14 +122,16 @@ const AdminAddProducts = () => {
             className="select input-form-area mt-3 px-2 "
           >
             <option value="0">اختر ماركة</option>
-            {brand.data
-              ? brand.data.map((item, index) => {
-                  return (
-                    <option key={index} value={item._id}>
-                      {item.name}
-                    </option>
-                  );
-                })
+            {brand
+              ? brand.results
+                ? brand.data.map((item, index) => {
+                    return (
+                      <option key={index} value={item._id}>
+                        {item.name}
+                      </option>
+                    );
+                  })
+                : null
               : null}
           </select>
           <div className="text-form mt-3 "> الالوان المتاحه للمنتج</div>

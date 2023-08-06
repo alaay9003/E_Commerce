@@ -7,7 +7,7 @@ import {
 } from "../type";
 
 const inital = {
-  category: [],
+  category: null,
   loading: true,
   oneCategory: [],
   deletCategory: [],

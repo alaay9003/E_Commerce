@@ -8,6 +8,7 @@ import SearchCountResult from "../../Components/Utility/SearchCountResult";
 const OneCategoryPage = () => {
   const { id } = useParams();
   const [products] = GetProductLikeHook(id);
+  console.log(products);
   return (
     <div style={{ minHeight: "600px" }}>
       <Container>

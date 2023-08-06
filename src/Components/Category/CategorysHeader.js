@@ -5,6 +5,7 @@ import HomeCategoryHook from "../../hook/category/home-category-hook";
 import CategoryCard from "./CategoryCard";
 
 const CategorysHeader = ({ cat }) => {
+  const [category, loading, color] = HomeCategoryHook();
   return (
     <div className="cat-header">
       <Container>

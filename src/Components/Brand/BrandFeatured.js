@@ -6,6 +6,7 @@ import HomeBrandHook from "../../hook/brand/home-brand-hook";
 
 const BrandFeatured = ({ title, btntitle }) => {
   const [brand, loading] = HomeBrandHook();
+
   return (
     <div className="my-3">
       {brand && !loading ? (
@@ -17,7 +18,9 @@ const BrandFeatured = ({ title, btntitle }) => {
                 <Spinner animation="border" />
               ) : brand.results > 0 ? (
                 brand.data.slice(0, 5).map((item, index) => {
-                  return <BrandCard img={item.image} key={index} />;
+                  return (
+                    <BrandCard img={item.image} key={index} id={item._id} />
+                  );
                 })
               ) : (
                 <h2>لا يوجد تصنيفات ...</h2>

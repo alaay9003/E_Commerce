@@ -26,7 +26,7 @@ function HomeCategoryHook() {
     "#FF6262",
     "#F4DBA5",
   ];
-  console.log("ssssssssssss" + cat);
+
   return [cat, loading, color];
 }
 

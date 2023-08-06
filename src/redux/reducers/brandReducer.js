@@ -7,7 +7,7 @@ import {
 } from "../type";
 
 const inital = {
-  brand: [],
+  brand: null,
   loading: true,
   oneBrand: [],
   deletBrand: [],
