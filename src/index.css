@@ -145,6 +145,14 @@ body {
   letter-spacing: 0;
   line-height: 19px;
 }
+.card-image {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+.card-image:hover {
+  transform: scale(1.1) rotate(0.01deg) !important;
+}
 
 /* end of card style */
 .shopping-now {
@@ -180,6 +188,7 @@ body {
   font-weight: bold;
   letter-spacing: 0;
   line-height: 39px;
+  /* color: #dfdfe0; */
 }
 
 .dicount-img {
@@ -481,6 +490,17 @@ body {
   background-color: #ffffff;
 }
 
+.cart-image {
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+.cart-image .ff {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+.cart-image:hover .ff {
+  transform: scale(1.1) rotate(0.01deg) !important;
+}
 /* cart end */
 
 /* admin style  */

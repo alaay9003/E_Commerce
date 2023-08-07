@@ -53,10 +53,12 @@ const AdminAllProductsCard = ({ item }) => {
           </Col>
         </Row>
         <Link to={`/products/${item._id}`} style={{ textDecoration: "none" }}>
-          <Card.Img
-            style={{ height: "228px", width: "100%" }}
-            src={item.imageCover}
-          />
+          <div className="d-flex justify-content-center text-center">
+            <Card.Img
+              style={{ height: "228px", width: "230px", padding: "10px" }}
+              src={item.imageCover}
+            />
+          </div>
           <Card.Body>
             <Card.Title>
               <div className="card-title">{item.title}</div>

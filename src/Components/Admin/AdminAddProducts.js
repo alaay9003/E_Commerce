@@ -35,6 +35,9 @@ const AdminAddProducts = () => {
     prodDescription,
     prodName,
   ] = AdminAddProductsHook();
+  let option = ["none"];
+  if (options) option = options;
+  else option = ["none"];
 
   return (
     <div>
@@ -110,7 +113,7 @@ const AdminAddProducts = () => {
           <Multiselect
             className="mt-2 text-end"
             placeholder="التصنيف الفرعي"
-            options={options}
+            //options={option}
             onSelect={onSelect}
             onRemove={onRemove}
             displayValue="name"

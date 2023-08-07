@@ -24,6 +24,7 @@ const BrandCard = ({ img, id }) => {
           <Card.Img
             style={{ width: "100%", height: "151px", borderRadius: "30px" }}
             src={img}
+            className="card-image"
           />
         </Card>
       </Link>

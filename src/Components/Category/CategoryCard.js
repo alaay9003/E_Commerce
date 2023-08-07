@@ -17,7 +17,7 @@ const CategoryCard = ({ img, name, id }) => {
           <img
             alt="category"
             src={img}
-            className="categoty-card-img"
+            className="categoty-card-img card-image"
             style={{ borderRadius: "20px" }}
           />
           <p className="categoty-card-text my-2">{name}</p>

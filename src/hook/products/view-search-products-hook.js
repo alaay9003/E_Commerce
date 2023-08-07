@@ -9,7 +9,6 @@ const ViewSearchProductsHook = () => {
   const getProduct = async () => {
     getStorge();
     sortData();
-
     await dispatch(
       getAllProductSearch(
         `sort=${sort}&limit=${limit}&keyword=${word}&${queryCat}&${brandCat}${pricefromString}${priceToString}`
@@ -56,13 +55,16 @@ const ViewSearchProductsHook = () => {
     brandCat = "",
     priceTo = "",
     priceFrom = "";
+
   const getStorge = () => {
     if (localStorage.getItem("searchWord") != null)
       word = localStorage.getItem("searchWord");
-    if (localStorage.getItem("catCecked") != null)
-      queryCat = localStorage.getItem("catCecked");
-    if (localStorage.getItem("brandCecked") != null)
-      brandCat = localStorage.getItem("brandCecked");
+    if (localStorage.getItem("catCheked") != null) {
+      queryCat = localStorage.getItem("catCheked");
+    }
+
+    if (localStorage.getItem("brandCheked") != null)
+      brandCat = localStorage.getItem("brandCheked");
     if (localStorage.getItem("priceTo") != null)
       priceTo = localStorage.getItem("priceTo");
     if (localStorage.getItem("priceFrom") != null)
@@ -91,11 +93,11 @@ const ViewSearchProductsHook = () => {
       sortType = "";
     }
 
-    if (sortType === "السعر من الاقل للاعلي") sort = "+price";
-    else if (sortType === "السعر من الاعلي للاقل") sort = "-price";
+    if (sortType === "greater") sort = "+price";
+    else if (sortType === "lower") sort = "-price";
     else if (sortType === "") sort = "";
-    else if (sortType === "الاكثر مبيعا") sort = "-sold";
-    else if (sortType === "الاعلي تقييما") sort = "-quantity";
+    else if (sortType === "sold") sort = "-sold";
+    else if (sortType === "ratingsQuantity") sort = "-quantity";
   };
 
   return [items, pagination, onPress, getProduct, results];

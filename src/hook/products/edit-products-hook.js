@@ -27,7 +27,7 @@ const EditProductHook = (id) => {
   //get last brand state from redux
   const brand = useSelector((state) => state.allBrand.brand);
 
-  //get last sub cat state from redux
+  // //get last sub cat state from redux
   const subCat = useSelector((state) => state.subCategory.subCategory);
 
   const onSelect = (selectedList) => {
@@ -54,19 +54,22 @@ const EditProductHook = (id) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (item.data) {
-      setImages(item.data.images);
-      setProdName(item.data.title);
-      setProdDescription(item.data.description);
-      setPriceBefore(item.data.price);
-      setQty(item.data.quantity);
-      setCatID(item.data.category);
-      SetBrandID(item.data.brand);
-      setColors(item.data.availableColors);
+    if (item) {
+      if (item.data) {
+        console.log(item);
+        setImages(item.data.images);
+        setProdName(item.data.title);
+        setProdDescription(item.data.description);
+        setPriceBefore(item.data.price);
+        setQty(item.data.quantity);
+        setCatID(item.data.category);
+        SetBrandID(item.data.brand);
+        setColors(item.data.availableColors);
+      }
     }
   }, [item]);
 
-  //to change name state
+  // to change name state
   const onChangeProdName = (event) => {
     event.persist();
     setProdName(event.target.value);
@@ -122,11 +125,11 @@ const EditProductHook = (id) => {
     }
   }, [CatID]);
 
-  useEffect(() => {
-    if (subCat) {
-      setOptions(subCat.data);
-    }
-  }, [subCat]);
+  // useEffect(() => {
+  //   if (subCat) {
+  //     setOptions(subCat.data);
+  //   }
+  // }, [subCat]);
 
   //when selet brand store id
   const onSeletBrand = (e) => {
@@ -148,7 +151,7 @@ const EditProductHook = (id) => {
     return new File([u8arr], filename, { type: mime });
   }
 
-  //to save data
+  // to save data
   const handelSubmit = async (e) => {
     e.preventDefault();
     if (

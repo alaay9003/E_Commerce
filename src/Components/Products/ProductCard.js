@@ -16,17 +16,24 @@ const ProductCard = ({ title, item }) => {
           border: "none",
           backgroundColor: "#FFFFFF",
           boxShadow: "0 2px 2px 0 rgba(151,151,151,0.5)",
+          overflow: "hidden",
         }}
       >
         <Link to={`/products/${item._id}`} style={{ textDecoration: "none" }}>
-          <Card.Img
-            // className=" mx-auto"
-            style={{
-              height: "228px",
-              width: "100%",
-            }}
-            src={item.imageCover}
-          />
+          <div
+            className="d-flex justify-content-center text-center"
+            style={{ overflow: "hidden" }}
+          >
+            <Card.Img
+              className="center-block card-image"
+              style={{
+                height: "220px",
+                width: "200px",
+                padding: "10px",
+              }}
+              src={item.imageCover}
+            />
+          </div>
         </Link>
         <div className="d-flex justify-content-end mx-2">
           <img

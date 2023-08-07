@@ -31,6 +31,7 @@ const SidebarSearchHook = () => {
   // }
   var queryCat = "";
   const [catCheked, setCatCheked] = useState([]);
+
   const clickCategory = (e) => {
     if (e.target.value == 0) {
       getQuery();

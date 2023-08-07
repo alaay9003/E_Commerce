@@ -16,7 +16,7 @@ const CartItem = ({ item }) => {
   ] = DeleteCartHook(item);
 
   return (
-    <Col xs="12" className="cart-item-body my-2 d-flex px-2">
+    <Col xs="12" className="cart-item-body my-2 d-flex px-2 cart-image">
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>هل أنت متأكد من عمليه الحذف ؟</Modal.Body>
         <Modal.Footer>
@@ -29,7 +29,7 @@ const CartItem = ({ item }) => {
         </Modal.Footer>
       </Modal>
       <img
-        className="ms-4 pt-4"
+        className="ms-4 pt-4 ff"
         style={{ width: "150px", maxHeight: "80%" }}
         // width="200px"
         src={

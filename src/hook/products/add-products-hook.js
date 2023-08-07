@@ -92,12 +92,11 @@ const AdminAddProductsHook = () => {
       await dispatch(getOneCategory(e.target.value));
     }
     setCatID(e.target.value);
-    console.log("ssssssssssssssss" + CatID);
   };
   useEffect(() => {
     if (CatID !== 0) {
       //console.log(CatID);
-      if (subCat.data) {
+      if (subCat) {
         setOptions(subCat.data);
       }
     }

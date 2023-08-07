@@ -71,7 +71,12 @@ const SideFilter = () => {
             onChange={priceFrom}
             className="m-2 text-center"
             type="number"
-            style={{ width: "50px", height: "25px" }}
+            style={{
+              width: "50px",
+              height: "25px",
+              borderRadius: "5px",
+              border: "1px solid gray",
+            }}
           />
         </div>
         <div className="d-flex">
@@ -81,7 +86,12 @@ const SideFilter = () => {
             onChange={priceTo}
             className="m-2 text-center"
             type="number"
-            style={{ width: "50px", height: "25px" }}
+            style={{
+              width: "50px",
+              height: "25px",
+              borderRadius: "5px",
+              border: "1px solid gray",
+            }}
           />
         </div>
       </Row>

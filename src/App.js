@@ -32,6 +32,7 @@ import AdminDeletCategoryPage from "./Pages/Admin/AdminDeletCategoryPage";
 import AdminDeletBrandPage from "./Pages/Admin/AdminDeletBrandPage";
 import OneCategoryPage from "./Pages/Category/OneCategoryPage";
 import OnBrandPage from "./Pages/Brand/OnBrandPage";
+import UserFileUpdatePage from "./Pages/User/UserFileUpdatePage";
 
 function App() {
   return (
@@ -72,7 +73,11 @@ function App() {
           />
           <Route path="/user/addresses" element={<UserAllAddresPage />} />
           <Route path="/user/add-address" element={<UserAddAddressPage />} />
-          <Route path="/user/edit-address" element={<UserEditAddressPage />} />
+          <Route path="/user/update" element={<UserFileUpdatePage />} />
+          <Route
+            path="/user/edit-address/:id"
+            element={<UserEditAddressPage />}
+          />
           <Route path="/user/profile" element={<UserProfilePage />} />
           <Route
             path="/admin/editproduct/:id"

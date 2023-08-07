@@ -98,21 +98,25 @@ const AdminEditProduct = () => {
             className="select input-form-area mt-3 px-2 "
           >
             <option value="0">التصنيف الرئيسي</option>
-            {category.data
-              ? category.data.map((item, index) => {
-                  return (
-                    <option key={index} value={item._id}>
-                      {item.name}
-                    </option>
-                  );
-                })
+            {category
+              ? category.results
+                ? category.data
+                  ? category.data.map((item, index) => {
+                      return (
+                        <option key={index} value={item._id}>
+                          {item.name}
+                        </option>
+                      );
+                    })
+                  : null
+                : null
               : null}
           </select>
 
           <Multiselect
             className="mt-2 text-end"
             placeholder="التصنيف الفرعي"
-            options={options}
+            //options={options}
             onSelect={onSelect}
             onRemove={onRemove}
             displayValue="name"
@@ -125,14 +129,18 @@ const AdminEditProduct = () => {
             className="select input-form-area mt-3 px-2 "
           >
             <option value="0">اختر ماركة</option>
-            {brand.data
-              ? brand.data.map((item, index) => {
-                  return (
-                    <option key={index} value={item._id}>
-                      {item.name}
-                    </option>
-                  );
-                })
+            {brand
+              ? brand.results
+                ? brand.data
+                  ? brand.data.map((item, index) => {
+                      return (
+                        <option key={index} value={item._id}>
+                          {item.name}
+                        </option>
+                      );
+                    })
+                  : null
+                : null
               : null}
           </select>
           <div className="text-form mt-3 "> الالوان المتاحه للمنتج</div>
